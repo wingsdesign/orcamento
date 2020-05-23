@@ -1,0 +1,102 @@
+ body{
+  margin: auto;
+  padding: 0;
+  /*width: 1000px;*/
+  background: #F3F3F3 !important;
+}
+#geral{
+
+  width: 1000px;
+  height: auto;
+  padding: 20mm;
+  background: #fff;
+  margin: 56px auto;
+  border-color:#fff #fff #fff #fff;
+  border-style:solid;
+  border-width:1px 2px 2px 1px;
+}
+.container{
+  width: 251mm;
+  margin: 0 auto;
+  margin-left: -51px;
+  margin-top: -25px;
+
+}
+#topo_context {
+    float: left;
+    padding: 10px 0px 0px 20px;
+}
+.topo img{
+  margin-top: 0px;
+  margin-bottom: 30px;
+}
+img{
+  text-align: center;
+
+  
+  /* margin-bottom: 40px;*/
+  width: 100%;
+}
+
+.informacoes__bottom{
+  margin-left: 50px;
+  margin-top: 10px;
+  font-size: 16px;
+}
+.data{
+  font-size: 17px;
+  height: 40px;
+  text-transform: uppercase;
+}
+.confirmado h1{
+  /* margin-bottom: 60px;*/
+  font-size: 65px;
+  border-style: solid;
+  border-width: 3px;
+  padding: 10px;
+
+}
+th{
+  height: 37px;
+}
+th.obs{
+  padding: 36px 0 0 0;
+  height: 100px;
+  font-size: 17px;
+  text-align: center;
+}
+.obs-p{
+  font-style: oblique;
+  font-size: 15px;
+  padding: 0 0 0 10px;
+}
+strong{
+/*  text-decoration: underline;*/
+  font-size: 20px;
+}
+.id_valor{
+  margin-top: 30px;
+}
+.id_data{
+  margin-top: 50px;
+  font-size: 15px;
+}
+
+.cliente{
+  margin-left: 50px;
+}
+.descricao{
+  margin-bottom: 20px;
+}
+.assi_wllisses .fl{
+  height: auto;
+  margin-top: -126px;
+
+}
+.separador{
+  width: 50%;
+  border-top: 1px solid #000;
+  list-style-type: none;
+  margin: 0 auto;
+  margin-top: 100px;
+}

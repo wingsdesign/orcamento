@@ -1,0 +1,92 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <title>ORÇAMENTO - {{ orcamento.fornecedor.nome }} {{ orcamento.data|date:"d F Y" }}</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel='stylesheet prefetch' href="{% static 'bootstrap/bootstrap.min.css' %}">
+
+  <link rel="stylesheet" href="{% static 'css/view_impressao.css' %}">
+    <style type="text/css" media="print">
+  body {
+      background: none;
+  }
+  .quebrapagina {
+      visibility: hidden;
+      page-break-before: inherit;
+  }
+thead{
+  color: red;
+}
+@media print{
+    /* les styles d'impression commencent ici */
+    thead th{
+background-color: #f5f5f5 !important;
+    }
+
+}
+
+  </style>
+
+</head>
+<body>
+<div id="geral">
+<div class="container">
+<div class="topo">
+  <div class="row">
+      <img class="fl" src="../../static/images/img-proposta.jpg" height="100" alt="" title="" />
+  </div>
+<div class="row">
+  <div class="cliente text-left">
+      <h4>Prezado(a): <b>{{orcamento.fornecedor}}</b></h4>
+      <h4>Nota Fiscal: <b>{{orcamento.nota_fiscal}}</b></h4><br>
+  </div>
+
+  <div class="descricao text-center">
+      <h3><b>ORÇAMENTO</b></h3>
+  </div>
+</div>  
+</div>
+<div class="row">
+    <table class="table table-striped table-bordered table-hover  text-center">
+      <thead class="btn-danger print">
+        <tr>
+          <th>#ID</th>
+          <th class="text-center">PRODUTO</th>
+          <th>VALOR UNITÁRIO</th>
+          <th>QUANTIDADE</th>
+        </tr>
+      </thead>
+      <tbody>
+       {% for item_do_orcamento in orcamento.produto_set.all %}
+        <tr>
+          <td>{{ item_do_orcamento.id }}</td>
+          <td class="text-center">{{ item_do_orcamento.material }}</td>
+          <td>{{ item_do_orcamento.preco }}</td>
+          <td>{{ item_do_orcamento.quantidade }}</td>
+        </tr>
+         {% endfor %}
+      </tbody>
+    </table>
+    </div>
+</div>
+<div class="container">
+  <div class="row">
+    <h4 class=" id_valor text-right">VALOR TOTAL <strong>R$: {{ orcamento.valor_compra }}</strong></h4>
+  </div>
+  <div class="row">
+    <h3 class="id_data text-right"><b>IMPERATRIZ-MA {{ orcamento.data|date|upper }}</b></h3>
+  </div>
+  </div>
+  <div class="separador assi_wllisses text-center">
+    <b>
+      Wings Design - Marketing | Design | Serviços<br>
+      Cpf: 000.000.000-000
+  <img class="fl" src="../../static/images/ass_wllisses.png" height="100" alt="" title="" />
+    </b>
+  </div><br>
+</div>
+<script src="{% static 'bootstrap/jquery.min.js' %}"></script>
+</body>
+</html>
